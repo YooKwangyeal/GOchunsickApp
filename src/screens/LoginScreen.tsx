@@ -1,35 +1,24 @@
 import React from 'react';
-import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
+import {Button, View, Text} from 'react-native';
+import KakaoLogins from '@react-native-seoul/kakao-login';
+import { useTranslation } from 'react-i18next';
 
 export default function LoginScreen() {
+  const { t, i18n } = useTranslation();
+  const handleLogin = async () => {
+    try {
+      const result = await KakaoLogins.login();
+      console.log('카카오 로그인 성공:', result);
+      // result.accessToken 등을 서버로 보내도 됨
+    } catch (err) {
+      console.warn('카카오 로그인 실패:', err);
+    }
+  };
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>로그인</Text>
-      <TextInput style={styles.input} placeholder="아이디 입력" />
-      <TextInput style={styles.input} placeholder="비밀번호 입력" secureTextEntry />
-      <Button title="로그인" onPress={() => {}} />
+    <View>
+      <Text>{t('Login')}</Text>
+      <Button title={t('kakaologin')} onPress={handleLogin} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#fff'
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20
-  },
-  input: {
-    width: '100%',
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    padding: 10,
-    marginBottom: 15
-  }
-});

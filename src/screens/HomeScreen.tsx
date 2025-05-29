@@ -10,9 +10,9 @@ const HomeScreen = () => {
 
   return (
     <View>
-      <Text>{t('Home')}</Text>
+      <Text>{t('HOME')}</Text>
       <Button
-        title="로그인 하러가기"
+        title={t('Gologin')}
         onPress={() => navigation.navigate('Login')}
       />
     </View>
