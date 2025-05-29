@@ -7,13 +7,17 @@
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import RootStack from './src/views/RootStack';
+import RootStack from './src/views/RootStack.tsx';
+import i18n from "./src/i18n";
+import { I18nextProvider } from "react-i18next";
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <RootStack />
-    </NavigationContainer>
+    <I18nextProvider i18n={i18n}>
+        <NavigationContainer>
+          <RootStack />
+        </NavigationContainer>
+    </I18nextProvider>  
   );
 };
 

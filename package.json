@@ -11,9 +11,12 @@
     "android no cache": "react-native run-android --reset-cache"
   },
   "dependencies": {
+    "i18next": "^25.2.1",
     "react": "19.0.0",
+    "react-i18next": "^15.5.2",
     "react-native": "0.79.2",
     "react-native-gesture-handler": "^2.25.0",
+    "react-native-localize": "^3.4.1",
     "react-native-reanimated": "^3.17.5",
     "react-native-safe-area-context": "^5.4.1",
     "react-native-screens": "^4.11.1",
