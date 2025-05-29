@@ -7,7 +7,7 @@
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import RootStack from './views/RootStack.tsx';
+import RootStack from '../src/views/RootStack.tsx';
 
 const App = () => {
   return (
