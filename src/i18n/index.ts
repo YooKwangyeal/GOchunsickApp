@@ -7,6 +7,8 @@ import en from "./locales/en.json";
 import jp from "./locales/jp.json";
 import cn from "./locales/cn.json";
 
+console.log('languageCode  =>>  ' + getLocales()[0].languageCode);
+
 const resources = {
   en: { translation: { ...en } },
   kr: { translation: { ...kr } },
@@ -17,7 +19,7 @@ const resources = {
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
-    resources: resources,
+    resources,
     lng: getLocales()[0].languageCode, // if you're using a language detector, do not define the lng option
     fallbackLng: "kr",
 

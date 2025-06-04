@@ -15,6 +15,17 @@ const HomeScreen = () => {
         title={t('Gologin')}
         onPress={() => navigation.navigate('Login')}
       />
+
+      <Button
+        title="메인 화면"
+        onPress={() => navigation.navigate('Mainpage')}
+      />
+
+      <Button
+        title="카카오 로그인"
+        onPress={() => navigation.navigate('Kakaopage')}
+      />
+
     </View>
   );
 };
