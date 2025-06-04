@@ -1,7 +1,7 @@
 import React from 'react';
 import {createNativeStackNavigator, NativeStackNavigationProp} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
-import LoginScreen from '../screens/LoginScreen';
+import Intro from '../screens/Intro';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const RootStack = () => (
   <Stack.Navigator>
     <Stack.Screen name="Home" component={HomeScreen} />
-    <Stack.Screen name="Login" component={LoginScreen} />
+    <Stack.Screen name="Login" component={Intro} />
   </Stack.Navigator>
 );
 

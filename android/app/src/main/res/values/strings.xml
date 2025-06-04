@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">gochunsickApp</string>
+    <string name="kakao_app_key">35081201c352dd2f37c1da22d11e8bbd</string>
 </resources>
