@@ -1,4 +1,4 @@
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import {
   login,
@@ -11,19 +11,22 @@ const SERVER_URL = 'http://10.0.2.2:8000/api/user';
 
 const Intro = () => {
   const [result, setResult] = useState<string>('');
+  const [profile, setProfile] = useState<any>(null);
 
   // 로그인 및 정보 조회 후 서버에 전송
   const signInAndSendInfo = async (): Promise<void> => {
     try {
       const token = await login();
-      const profile = await getKakaoProfile();
+      const profileData = await getKakaoProfile();
+      setProfile(profileData); // 프로필 정보 저장
 
       // 필요한 정보만 추출
       const userData = {
-        m_sns_key: profile.id?.toString() ?? '', // 카카오 id
-        m_relate_type: 'kakao', // 예시, 필요에 따라 수정
-        nickname: profile.nickname ?? '',
-        email: profile.email ?? '',
+        nickname: profileData.nickname ?? '',
+        email: profileData.email ?? '',
+        m_gender: profileData.gender ?? '',
+        m_sns_key: profileData.id?.toString() ?? '',
+        m_sns_type: 'kakao',
       };
 
       // 서버에 정보 전송 및 DB 저장 요청
@@ -45,13 +48,22 @@ const Intro = () => {
     try {
       const message = await logout();
       setResult(message);
+      setProfile(null); // 로그아웃 시 프로필 정보 초기화
     } catch (err) {
       console.error('signOut error', err);
     }
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
+      {profile && (
+        <View style={styles.profileBox}>
+          <Text style={styles.profileTitle}>카카오 프로필 정보</Text>
+          <Text style={styles.profileJson}>
+            {JSON.stringify(profile, null, 2)}
+          </Text>
+        </View>
+      )}
       <ResultView result={result} />
       <Pressable style={styles.button} onPress={signInAndSendInfo}>
         <Text style={styles.text}>카카오 로그인 및 정보 등록</Text>
@@ -59,7 +71,7 @@ const Intro = () => {
       <Pressable style={styles.button} onPress={signOutWithKakao}>
         <Text style={styles.text}>카카오 로그아웃</Text>
       </Pressable>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -84,5 +96,23 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
+  },
+  profileBox: {
+    width: '90%',
+    backgroundColor: '#fffbe7',
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 20,
+    marginTop: 20,
+  },
+  profileTitle: {
+    fontWeight: 'bold',
+    marginBottom: 8,
+    fontSize: 16,
+  },
+  profileJson: {
+    fontFamily: 'monospace',
+    fontSize: 12,
+    color: '#333',
   },
 });
