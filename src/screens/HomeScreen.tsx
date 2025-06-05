@@ -23,7 +23,7 @@ const HomeScreen = () => {
 
       <Button
         title="카카오 로그인"
-        onPress={() => navigation.navigate('Kakaopage')}
+        onPress={() => navigation.navigate('Login')}
       />
 
     </View>
