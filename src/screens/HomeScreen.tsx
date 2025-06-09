@@ -26,6 +26,11 @@ const HomeScreen = () => {
         onPress={() => navigation.navigate('Login')}
       />
 
+      <Button
+        title="Axios 테스트"
+        onPress={() => navigation.navigate('AxiosScreen')}
+      />
+
     </View>
   );
 };

@@ -3,6 +3,7 @@ import {createNativeStackNavigator, NativeStackNavigationProp} from '@react-navi
 import HomeScreen from '../screens/HomeScreen';
 import Intro from '../screens/Intro';
 import mainScreen from '../screens/MainTempScreen';
+import AxiosScreen from '../screens/AxiosTet';
 import { TextStyle , TouchableOpacity , View , Image } from 'react-native';
 import styles from '../../assets/css/styles'; 
 import DropDownTrigger from '../components/component/index';
@@ -12,6 +13,7 @@ export type RootStackParamList = {
   Login: undefined;
   Mainpage: undefined;
   Kakaopage : undefined; // 추가된 페이지
+  AxiosScreen: undefined; // Axios 테스트 페이지
 };
 
 export type RootStackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
@@ -23,6 +25,7 @@ const RootStack = () => (
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Login" component={Intro} />
     <Stack.Screen  name="Mainpage" component={mainScreen} options={headerOption({title : ''})} />
+    <Stack.Screen name="AxiosScreen" component={AxiosScreen} />
   </Stack.Navigator>
 );
 
