@@ -1,13 +1,14 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {WebView} from 'react-native-webview';
-import {KAKAO_MAP_JS_KEY} from '@env';
+import Config from 'react-native-config';
 
 type KakaoMapProps = {
   latitude: number;
   longitude: number;
 };
 
+const KAKAO_MAP_API_KEY = Config.KAKAO_MAP_API_KEY; // 환경 변수에서 API 키 가져오기
 const DEFAULT_LAT = 33.450701;
 const DEFAULT_LNG = 126.570667;
 
@@ -20,7 +21,7 @@ export default function KakaoMap({latitude, longitude}: KakaoMapProps) {
     <html>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_MAP_JS_KEY}&autoload=false"></script>
+        <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_MAP_API_KEY}&autoload=false"></script>
         <style>
           html, body, #map { width: 100%; height: 100%; margin: 0; padding: 0; }
         </style>

@@ -29,12 +29,8 @@ const RootStack = () => (
   <Stack.Navigator>
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Login" component={Intro} />
-    <Stack.Screen name="Map" component={Map} />
-    <Stack.Screen
-     name="Mainpage"
-      component={mainScreen}
-      options={headerOption({title: ''})}
-    />
+    <Stack.Screen name="Map"  component={Map} />
+    <Stack.Screen name="Mainpage" component={mainScreen} options={headerOption({title: ''})} />
     <Stack.Screen name="AxiosScreen" component={AxiosScreen} />
   </Stack.Navigator>
 );

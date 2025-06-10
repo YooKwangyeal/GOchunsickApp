@@ -1,8 +1,9 @@
-import initializeAxios from "./BaseInstance";
+import initializeAxios from "./baseInstance";
 
-const  apiInstance = initializeAxios(''); 
+const  apiInstance = initializeAxios.initializeAxios(); 
 
 const UserAxios = {
+    
   getUser: async (data: any) => {
     try {
       const response = await apiInstance.post('/api/user/info', data);
@@ -12,6 +13,7 @@ const UserAxios = {
       throw new Error('Failed to fetch user');
     }
   },
+
 };
 
 export default UserAxios;
