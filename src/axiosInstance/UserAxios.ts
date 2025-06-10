@@ -1,10 +1,13 @@
-import instance from "./BaseInstance";
+import initializeAxios from "./BaseInstance";
+
+const  apiInstance = initializeAxios(''); 
 
 const UserAxios = {
 
   getUser : async (data: any) => {
     try {
-        const response = await instance.post("/api/user/info", data);
+        const response = await apiInstance.post("/api/user/info", data);
+        console.log('getUser response', response);
         return response;
     } catch (error) {
         throw new Error('Failed to fetch user');

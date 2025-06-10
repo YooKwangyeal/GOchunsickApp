@@ -8,7 +8,10 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "android no cache": "react-native run-android --reset-cache"
+    "android no cache": "react-native run-android --reset-cache",
+    "android:local": "react-native run-android --mode=localdebug",
+    "android:dev": "react-native run-android --mode=devdebug",
+    "android:prod": "react-native run-android --mode=proddebug"
   },
   "dependencies": {
     "@emotion/core": "^11.0.0",
@@ -20,6 +23,7 @@
     "react": "19.0.0",
     "react-i18next": "^15.5.2",
     "react-native": "0.79.2",
+    "react-native-config": "^1.5.5",
     "react-native-element-dropdown": "^2.12.4",
     "react-native-gesture-handler": "^2.25.0",
     "react-native-localize": "^3.4.1",
