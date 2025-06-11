@@ -1,21 +1,50 @@
-import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, StyleSheet, PermissionsAndroid, Platform} from 'react-native';
 import {WebView} from 'react-native-webview';
 import Config from 'react-native-config';
-
-type KakaoMapProps = {
-  latitude: number;
-  longitude: number;
-};
+import Geolocation from 'react-native-geolocation-service';
 
 const KAKAO_MAP_API_KEY = Config.KAKAO_MAP_API_KEY; // 환경 변수에서 API 키 가져오기
-const DEFAULT_LAT = 33.450701;
-const DEFAULT_LNG = 126.570667;
+const DEFAULT_LAT = 37.147754;
+const DEFAULT_LNG = 127.080874;
 
-export default function KakaoMap({latitude, longitude}: KakaoMapProps) {
-  const lat = latitude || DEFAULT_LAT;
-  const lng = longitude || DEFAULT_LNG;
+interface ILocation {
+  latitude: number;
+  longitude: number;
+}
 
+export default function KakaoMap() {
+  const [location, setLocation] = useState<ILocation | undefined>(undefined);
+  let _watchId: number;
+
+  useEffect(() => {
+    _watchId = Geolocation.watchPosition(
+      position => {
+        const {latitude, longitude} = position.coords;
+        setLocation({latitude, longitude});
+      },
+      error => {
+        console.log(error);
+      },
+      {
+        enableHighAccuracy: true,
+        distanceFilter: 0,
+        interval: 5000,
+        fastestInterval: 2000,
+      },
+    );
+
+    return () => {
+      if (_watchId !== null) {
+        Geolocation.clearWatch(_watchId);
+      }
+    };
+  }, []);
+
+  const lat = location?.latitude || DEFAULT_LAT;
+  const lng = location?.longitude || DEFAULT_LNG;
+
+  console.log(`Current Location: ${lat}, ${lng}`);
   const htmlContent = `
     <!DOCTYPE html>
     <html>
@@ -40,6 +69,8 @@ export default function KakaoMap({latitude, longitude}: KakaoMapProps) {
             var marker = new kakao.maps.Marker({
               position: markerPosition
             });
+            var zoomControl = new kakao.maps.ZoomControl();
+            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
             marker.setMap(map);
           });
         </script>
