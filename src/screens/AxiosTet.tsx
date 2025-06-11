@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import UserAxios from '../axiosInstance/UserAxios'; 
 import TourAxios from '../axiosInstance/TourApiAxios'; 
 import { TourParams } from "../../src/axiosInstance/models/tourModel"; // 모델 임포트
+import LoadingScreen from '../components/component/loadingscreen'; // 로딩 컴포넌트 임포트
 
 const AxiosScreen = () => {
   const [user, setUser] = useState<any>(null);
@@ -52,9 +53,7 @@ const AxiosScreen = () => {
 
     if (user === null || user === undefined) {
       return (
-      <View>
-        <Text>loading</Text>
-      </View>
+      <LoadingScreen />
       );
     } else {
       return (

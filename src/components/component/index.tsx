@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../../assets/css/styles';
-import { TouchableOpacity, Modal, View, Text ,Image } from 'react-native';
+import { TouchableOpacity, Modal, View, Text ,Image ,StyleSheet } from 'react-native';
 import i18next from 'i18next';
 
 const DropDownTrigger = () => {
@@ -10,8 +9,13 @@ const DropDownTrigger = () => {
     
     console.log(`언어 설정: ${lang}`);
     i18next.changeLanguage(lang);
-    setVisible(false);
+    closeModal();
   }
+
+  const closeModal = () => {
+    console.log('모달 닫기');
+    setVisible(false);
+  };
 
   return (
     <>
@@ -20,9 +24,8 @@ const DropDownTrigger = () => {
       </TouchableOpacity>
       <Modal
         visible={visible}
-        transparent
-        animationType="none"
-        onRequestClose={() => setVisible(false)}
+        transparent={true}
+        onRequestClose={closeModal}
       >
         <TouchableOpacity style={{ flex: 1 }} >
           <View style={{
@@ -39,5 +42,13 @@ const DropDownTrigger = () => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  icon: {
+    width: 28,
+    height: 28,
+    marginTop: 14
+  }
+});
 
 export default DropDownTrigger;
