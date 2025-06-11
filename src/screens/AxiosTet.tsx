@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import UserAxios from '../axiosInstance/UserAxios'; 
 import TourAxios from '../axiosInstance/TourApiAxios'; 
-import Config from 'react-native-config'
 import { TourParams } from "../../src/axiosInstance/models/tourModel"; // 모델 임포트
 
 const AxiosScreen = () => {
@@ -31,18 +30,9 @@ const AxiosScreen = () => {
 
     const fetchTour = async () => {
       try {
-        var tourData : TourParams =  {
-          serviceKey: Config.TOUR_API_KEY??'',
-          pageNo: 1,
-          numOfRows: 10,
-          MobileOS: 'AND',
-          MobileApp: 'gochunsick',
-          baseYm: 202310,
-          areaCd: '50',
-          signguCd: '50110',
-          _type: 'json'
-        }
-        console.log('tourData', tourData);
+        
+        var tourData = new TourParams();
+        
         var tour = await TourAxios.getAreaBasedTourList(tourData); // userId 1로 요청
         if (tour === undefined || tour === null) {
           console.error('tour data is undefined or null');
@@ -71,7 +61,6 @@ const AxiosScreen = () => {
       <View>
         <Text>m_id : {user.m_id}</Text>
         <Text>m_sns_key : {user.m_sns_key}</Text>
-        <Text>{tour??''}</Text>
       </View>  
       );
     }

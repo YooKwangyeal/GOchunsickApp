@@ -7,7 +7,7 @@ const MainTempScreen = () => {
   const { t } = useTranslation();
 
   return (
-    <ScrollView style={[styles.container, { paddingBottom: 80 }]}>
+    <ScrollView >
       <View style={styles.bubbleContainer}>
         <View style={styles.bubble}>
           <Text style={styles.bubbleText}>

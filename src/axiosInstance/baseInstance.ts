@@ -35,7 +35,8 @@ const initializeAxios = (): AxiosInstance => {
     async (response : AxiosResponse) => {
         const { config } = response;
         const originalRequest = config;
-        console.log('response status', response.status);
+        console.log('Axios Api originalRequest ==>  ', originalRequest);
+        console.log('Axios Api response ==>  ', response);
         if (response.status === 401) { // 401: Unauthorized
         // 토큰 만료 혹은 로그인 정보 없음
         /*removeAccessToken();
@@ -70,8 +71,8 @@ const initializeTourAxios = (apiType : String): AxiosInstance => {
 
     if (apiType === 'basic') {
         uRL = 'https://apis.data.go.kr/B551011/TarRlteTarService1';
-    } else if (apiType === 'dev') {
-        uRL = 'https://apis.data.go.kr/B551011/TarRlteTarService1';
+    } else if (apiType === 'korser') {
+        uRL = 'https://apis.data.go.kr/B551011/KorService2';
     } else if (apiType === 'prod') {
         uRL = 'https://apis.data.go.kr/B551011/TarRlteTarService1';
     }  
@@ -97,14 +98,21 @@ const initializeTourAxios = (apiType : String): AxiosInstance => {
     async (response : AxiosResponse) => {
         const { config } = response;
         const originalRequest = config;
-        console.log('response status', response.status);
+        console.log('Axios Tour originalRequest ==>  ', originalRequest);
+        console.log('Axios Tour response ==>  ', response);
         if (response.status === 401) { // 401: Unauthorized
         
         } else if (response.status === 500) { // 403: Forbidden
             console.log('response status 500');
+        } else {
+            const resultCode = response.data.response.header.resultCode??'';
+            if (resultCode !== '0000') {
+                console.log('response status resultCode', resultCode);
+                throw new Error(`API Error: ${resultCode}`);
+            } else {
+                return response.data;
+            }
         }
-        // 로그인 정보가 있는 경우 (일반 요청)
-        return response.data;
     },
     (err: AxiosError) => {
         Promise.reject(err);
