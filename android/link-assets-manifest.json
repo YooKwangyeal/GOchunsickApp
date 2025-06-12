@@ -1,0 +1,29 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/KakaoBigSans-Bold.ttf",
+      "sha1": "a88b93846895a7346d456f278fb6b70216940577"
+    },
+    {
+      "path": "assets/fonts/KakaoBigSans-ExtraBold.ttf",
+      "sha1": "936ad7f2605e1698919c8a12cf2ecc938c2f77ef"
+    },
+    {
+      "path": "assets/fonts/KakaoBigSans-Regular.ttf",
+      "sha1": "85fb3d16585ecdec7d632d6fd50071d753777706"
+    },
+    {
+      "path": "assets/fonts/KakaoSmallSans-Bold.ttf",
+      "sha1": "f7dcbc8c012fc13d1d1b7d8f4b7997f09065d244"
+    },
+    {
+      "path": "assets/fonts/KakaoSmallSans-Light.ttf",
+      "sha1": "7cd52de4872d43a8e958513bf684f733bc1df7b8"
+    },
+    {
+      "path": "assets/fonts/KakaoSmallSans-Regular.ttf",
+      "sha1": "84c5a25d8afaa76e3deb71bcb8aed0ae0a95679e"
+    }
+  ]
+}

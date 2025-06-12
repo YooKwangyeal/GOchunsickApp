@@ -9,6 +9,7 @@ import Intro from '../screens/Intro';
 import mainScreen from '../screens/MainScreen';
 import AxiosScreen from '../screens/AxiosTet';
 import MapScreen from '../screens/Map';
+import TourScreen from '../screens/TourInfo'
 import {TextStyle, TouchableOpacity, View, Image,StyleSheet , useWindowDimensions} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerContent from '../components/component/drawercomponet';
@@ -21,6 +22,7 @@ export type RootStackParamList = {
   Map: undefined; // 추가된 페이지
   AxiosScreen: undefined; // Axios 테스트 페이지
   Loading : undefined; // 로딩 페이지
+  TourScreen : undefined; // 투어 정보 페이지
 };
 
 export type RootStackNavigationProp =
@@ -53,6 +55,7 @@ const RootStack = () => (
         <Stack.Screen name="Login" component={Intro} />
         <Stack.Screen name="Map"  component={MapScreen} />
         <Stack.Screen name="AxiosScreen" component={AxiosScreen} />
+        <Stack.Screen name="TourScreen" component={TourScreen} />
       </Stack.Navigator>
   
 );

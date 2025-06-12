@@ -54,7 +54,7 @@ export default function DrawerContent(props: any) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#FFE600',
   },
   scrollView: {
     flex: 1,

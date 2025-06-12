@@ -11,6 +11,12 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		0F1ED19DD3AB4B5683A0A4FC /* KakaoBigSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83AAACD488E344458E5CE62C /* KakaoBigSans-Bold.ttf */; };
+		26AC9DB500BA41CA8CCDDFCE /* KakaoBigSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6DEF81786E44C69B7D96033 /* KakaoBigSans-ExtraBold.ttf */; };
+		200E965C38324372A86D36C9 /* KakaoBigSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 908E2CB015C5447E8C8FC8D5 /* KakaoBigSans-Regular.ttf */; };
+		8F513E8A9BB640988C8E53A5 /* KakaoSmallSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD491C584CC24F9687293837 /* KakaoSmallSans-Bold.ttf */; };
+		33D22AE2EB374D4A8F24434B /* KakaoSmallSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46CE4AE4E5124242A46E72D9 /* KakaoSmallSans-Light.ttf */; };
+		DD94E5983E00440198A8A57E /* KakaoSmallSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2CFF2BD1B194528915CCAF4 /* KakaoSmallSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,12 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = gochunsickApp/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = gochunsickApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		83AAACD488E344458E5CE62C /* KakaoBigSans-Bold.ttf */ = {isa = PBXFileReference; name = "KakaoBigSans-Bold.ttf"; path = "../assets/fonts/KakaoBigSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E6DEF81786E44C69B7D96033 /* KakaoBigSans-ExtraBold.ttf */ = {isa = PBXFileReference; name = "KakaoBigSans-ExtraBold.ttf"; path = "../assets/fonts/KakaoBigSans-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		908E2CB015C5447E8C8FC8D5 /* KakaoBigSans-Regular.ttf */ = {isa = PBXFileReference; name = "KakaoBigSans-Regular.ttf"; path = "../assets/fonts/KakaoBigSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AD491C584CC24F9687293837 /* KakaoSmallSans-Bold.ttf */ = {isa = PBXFileReference; name = "KakaoSmallSans-Bold.ttf"; path = "../assets/fonts/KakaoSmallSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		46CE4AE4E5124242A46E72D9 /* KakaoSmallSans-Light.ttf */ = {isa = PBXFileReference; name = "KakaoSmallSans-Light.ttf"; path = "../assets/fonts/KakaoSmallSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A2CFF2BD1B194528915CCAF4 /* KakaoSmallSans-Regular.ttf */ = {isa = PBXFileReference; name = "KakaoSmallSans-Regular.ttf"; path = "../assets/fonts/KakaoSmallSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +105,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				DFD4623841E1451C9F3C3956 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -115,6 +128,20 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		DFD4623841E1451C9F3C3956 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				83AAACD488E344458E5CE62C /* KakaoBigSans-Bold.ttf */,
+				E6DEF81786E44C69B7D96033 /* KakaoBigSans-ExtraBold.ttf */,
+				908E2CB015C5447E8C8FC8D5 /* KakaoBigSans-Regular.ttf */,
+				AD491C584CC24F9687293837 /* KakaoSmallSans-Bold.ttf */,
+				46CE4AE4E5124242A46E72D9 /* KakaoSmallSans-Light.ttf */,
+				A2CFF2BD1B194528915CCAF4 /* KakaoSmallSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -185,6 +212,12 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				0F1ED19DD3AB4B5683A0A4FC /* KakaoBigSans-Bold.ttf in Resources */,
+				26AC9DB500BA41CA8CCDDFCE /* KakaoBigSans-ExtraBold.ttf in Resources */,
+				200E965C38324372A86D36C9 /* KakaoBigSans-Regular.ttf in Resources */,
+				8F513E8A9BB640988C8E53A5 /* KakaoSmallSans-Bold.ttf in Resources */,
+				33D22AE2EB374D4A8F24434B /* KakaoSmallSans-Light.ttf in Resources */,
+				DD94E5983E00440198A8A57E /* KakaoSmallSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
