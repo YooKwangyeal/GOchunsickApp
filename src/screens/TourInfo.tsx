@@ -7,8 +7,8 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../views/RootStack';
+import { RouteProp, useNavigation } from '@react-navigation/native';
+import { RootStackParamList, RootStackNavigationProp } from '../views/RootStack';
 import SurveyOption from '../../src/components/component/SurveyOption';
 import SurveySection from '../../src/components/component/SurveySection';
 
@@ -47,7 +47,7 @@ type TourInfoRouteProp = RouteProp<RootStackParamList, 'TourScreen'>;
     ];
 
 const TourScreen = ({ route }: { route: TourInfoRouteProp }) => {
-  
+  const navigation = useNavigation<RootStackNavigationProp>();
   // 상태 관리
   const [selectedDuration, setSelectedDuration] = useState<string | null>(null);
   const [selectedCompanions, setSelectedCompanions] = useState<string[]>([]);
@@ -92,7 +92,7 @@ const TourScreen = ({ route }: { route: TourInfoRouteProp }) => {
     };
     
     console.log('선택된 여행 취향:', preferences);
-    // 여기에 데이터 제출 로직 추가
+    navigation.navigate('GptResponseScreen', preferences);
   };
 
   useEffect(() => {
